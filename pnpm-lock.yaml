@@ -46,9 +46,6 @@ devDependencies:
   eslint-plugin-react-refresh:
     specifier: ^0.4.5
     version: 0.4.5(eslint@8.56.0)
-  stylelint:
-    specifier: ^16.1.0
-    version: 16.1.0(typescript@5.3.3)
   stylelint-config-recess-order:
     specifier: ^4.4.0
     version: 4.4.0(stylelint@16.1.0)
