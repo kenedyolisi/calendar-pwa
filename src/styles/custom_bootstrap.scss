@@ -42,19 +42,18 @@ $font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
 
 @import "../../node_modules/bootstrap/scss/utilities";
 
-// $utilities: map-merge(
-//   $utilities,
-//   (
-//     "rounded":
-//       map-merge(
-//         map-get($utilities, "rounded"),
-//         (
-//           state: hover,
-//           // Add hover state to rounded utility
-//         )
-//       ),
-//   )
-// );
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-color":
+      map-merge(
+        map-get($utilities, "background-color"),
+        (
+          state: hover,
+        )
+      ),
+  )
+);
 
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/type";
