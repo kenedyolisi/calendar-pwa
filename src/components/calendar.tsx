@@ -106,7 +106,7 @@ export const Calendar = () => {
           Today
         </button>
       </div>
-      <table className="table table-borderless table-responsive caption-top">
+      <table className="table table-borderless table-responsive caption-top text-center">
         <caption className="text-capitalize text-center text-bg-primary">
           {format(date, "MMMM yyyy")}
         </caption>
