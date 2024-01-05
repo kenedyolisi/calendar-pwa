@@ -1,10 +1,12 @@
 import {
+  addMonths,
   eachDayOfInterval,
   endOfMonth,
   format,
   getDay,
   isToday,
   startOfMonth,
+  subMonths,
 } from "date-fns";
 import { useState } from "react";
 
@@ -47,22 +49,73 @@ export const Calendar = () => {
     );
   }
 
-  return (
-    <table className="table table-borderless table-responsive caption-top">
-      <caption className="text-capitalize text-center text-bg-primary">
-        {format(date, "MMMM yyyy")}
-      </caption>
+  function handlePrevClick() {
+    setDate(subMonths(date, 1));
+  }
 
-      <thead>
-        <tr>
-          {daysOfTheWeek.map((day) => (
-            <th className="text-capitalize" key={day}>
-              {day}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>{renderMonthDates(daysInMonth)}</tbody>
-    </table>
+  function handleNextClick() {
+    setDate(addMonths(date, 1));
+  }
+
+  return (
+    <div>
+      <div className="d-flex mb-2">
+        <button
+          className="btn border me-1 bg-body-secondary-hover"
+          type="button"
+          title="Go to previous month"
+          onClick={handlePrevClick}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            width="16"
+            height="16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            />
+          </svg>
+        </button>
+        <button
+          className="btn border bg-body-secondary-hover"
+          type="button"
+          title="Go to next month"
+          onClick={handleNextClick}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            width="16"
+            height="16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+        </button>
+      </div>
+      <table className="table table-borderless table-responsive caption-top">
+        <caption className="text-capitalize text-center text-bg-primary">
+          {format(date, "MMMM yyyy")}
+        </caption>
+
+        <thead>
+          <tr>
+            {daysOfTheWeek.map((day) => (
+              <th className="text-capitalize" key={day}>
+                {day}
+              </th>
+            ))}
+          </tr>
+        </thead>
+
+        <tbody>{renderMonthDates(daysInMonth)}</tbody>
+      </table>
+    </div>
   );
 };
