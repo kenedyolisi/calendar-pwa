@@ -3,6 +3,7 @@ import {
   endOfMonth,
   format,
   getDay,
+  isToday,
   startOfMonth,
 } from "date-fns";
 import { useState } from "react";
@@ -16,7 +17,7 @@ export const Calendar = () => {
     start: startOfMonth(date),
     end: endOfMonth(date),
   });
-  
+
   function renderMonthDates(allDates: Date[]) {
     const firstDayOfWeek = getDay(allDates[0]);
 
@@ -32,7 +33,14 @@ export const Calendar = () => {
                 ? null
                 : allDates[index - firstDayOfWeek];
 
-            return <td key={index}>{date ? format(date, "d") : ""}</td>;
+            return (
+              <td
+                className={`${date && isToday(date) ? "text-bg-primary" : ""}`}
+                key={index}
+              >
+                {date ? format(date, "d") : ""}
+              </td>
+            );
           })}
         </tr>
       )
