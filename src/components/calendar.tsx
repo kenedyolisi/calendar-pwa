@@ -57,6 +57,10 @@ export const Calendar = () => {
     setDate(addMonths(date, 1));
   }
 
+  function handleTodayClick() {
+    setDate(new Date());
+  }
+
   return (
     <div>
       <div className="d-flex mb-2">
@@ -80,7 +84,7 @@ export const Calendar = () => {
           </svg>
         </button>
         <button
-          className="btn border bg-body-secondary-hover"
+          className="btn border me-1 bg-body-secondary-hover"
           type="button"
           title="Go to next month"
           onClick={handleNextClick}
@@ -97,6 +101,9 @@ export const Calendar = () => {
               d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
             />
           </svg>
+        </button>
+        <button className="btn border" type="button" onClick={handleTodayClick}>
+          Today
         </button>
       </div>
       <table className="table table-borderless table-responsive caption-top">
