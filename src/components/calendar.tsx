@@ -62,7 +62,7 @@ export const Calendar = () => {
   }
 
   return (
-    <div>
+    <div className="my-auto">
       <div className="d-flex mb-2">
         <button
           className="btn border me-1 bg-body-secondary-hover"
