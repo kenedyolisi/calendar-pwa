@@ -37,7 +37,9 @@ export const Calendar = () => {
 
             return (
               <td
-                className={`${date && isToday(date) ? "text-bg-primary" : ""}`}
+                className={`${
+                  date && isToday(date) ? "bg-blue-500 text-white " : ""
+                }`}
                 key={index}
               >
                 {date ? format(date, "d") : ""}
@@ -63,9 +65,9 @@ export const Calendar = () => {
 
   return (
     <div className="my-auto">
-      <div className="d-flex mb-2">
+      <div className="flex mb-2">
         <button
-          className="btn border me-1 bg-body-secondary-hover"
+          className="border me-1 p-1 active:scale-90"
           type="button"
           title="Go to previous month"
           onClick={handlePrevClick}
@@ -84,7 +86,7 @@ export const Calendar = () => {
           </svg>
         </button>
         <button
-          className="btn border me-1 bg-body-secondary-hover"
+          className="border me-1 p-1 active:scale-90"
           type="button"
           title="Go to next month"
           onClick={handleNextClick}
@@ -102,19 +104,19 @@ export const Calendar = () => {
             />
           </svg>
         </button>
-        <button className="btn border" type="button" onClick={handleTodayClick}>
+        <button className="border p-1" type="button" onClick={handleTodayClick}>
           Today
         </button>
       </div>
-      <table className="table table-borderless table-responsive caption-top text-center">
-        <caption className="text-capitalize text-center text-bg-primary">
+      <table className="text-center">
+        <caption className="bg-blue-500 text-white">
           {format(date, "MMMM yyyy")}
         </caption>
 
         <thead>
           <tr>
             {daysOfTheWeek.map((day) => (
-              <th className="text-capitalize" key={day}>
+              <th className="" key={day}>
                 {day}
               </th>
             ))}
