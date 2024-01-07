@@ -67,7 +67,7 @@ export const Calendar = () => {
     <div className="my-auto">
       <div className="flex mb-2">
         <button
-          className="border me-1 p-1 active:scale-90"
+          className="border me-1 p-1 active:scale-90 hover:bg-gray-100"
           type="button"
           title="Go to previous month"
           onClick={handlePrevClick}
@@ -104,11 +104,15 @@ export const Calendar = () => {
             />
           </svg>
         </button>
-        <button className="border p-1" type="button" onClick={handleTodayClick}>
+        <button
+          className="border p-1 active:scale-90 hover:bg-gray-200"
+          type="button"
+          onClick={handleTodayClick}
+        >
           Today
         </button>
       </div>
-      <table className="text-center">
+      <table className=" table-auto text-center">
         <caption className="bg-blue-500 text-white">
           {format(date, "MMMM yyyy")}
         </caption>
