@@ -1,1 +1,7 @@
-export default { plugins: { autoprefixer: {}, tailwindcss: {} } };
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+    cssnano: { preset: "advanced" },
+  },
+};
