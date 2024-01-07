@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy to GitHub pages
+name: Deploy
 
 on:
   # Runs on pushes targeting the default branch
@@ -33,6 +33,8 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
+        with: 
+          version: ">=8"
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
