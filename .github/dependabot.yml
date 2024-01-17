@@ -6,7 +6,7 @@
 version: 2
 
 updates:
-  - package-ecosystem: "npm"
+  - package-ecosystem: "pnpm"
     # Files stored in repository root
     directory: "/"
     schedule:
