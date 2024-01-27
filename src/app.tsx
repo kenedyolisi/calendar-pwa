@@ -1,7 +1,9 @@
-import "./app.scss";
-
 import { Calendar } from "./components/calendar";
 
 export default function App() {
-  return <Calendar />;
+  return (
+    <main className="flex justify-center items-center h-screen">
+      <Calendar />
+    </main>
+  );
 }
