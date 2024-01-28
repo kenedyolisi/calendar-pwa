@@ -12,14 +12,14 @@ import {
 } from "date-fns";
 import { useState } from "react";
 
-export const Calendar = () => {
-  const [date, setDate] = useState(new Date());
+export const Calendar = ({ date = new Date() }: { date?: Date }) => {
+  const [currentDate, setCurrentDate] = useState(date);
 
   const daysOfTheWeek = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
 
   const daysInMonth = eachDayOfInterval({
-    start: startOfMonth(date),
-    end: endOfMonth(date),
+    start: startOfMonth(currentDate),
+    end: endOfMonth(currentDate),
   });
 
   function renderMonthDates(allDates: Date[]) {
@@ -54,23 +54,23 @@ export const Calendar = () => {
   }
 
   function handlePrevYearClick() {
-    setDate(subYears(date, 1));
+    setCurrentDate(subYears(currentDate, 1));
   }
 
   function handlePrevMonthClick() {
-    setDate(subMonths(date, 1));
+    setCurrentDate(subMonths(currentDate, 1));
   }
 
   function handleNextMonthClick() {
-    setDate(addMonths(date, 1));
+    setCurrentDate(addMonths(currentDate, 1));
   }
 
   function handleNextYearClick() {
-    setDate(addYears(date, 1));
+    setCurrentDate(addYears(currentDate, 1));
   }
 
   function handleTodayClick() {
-    setDate(new Date());
+    setCurrentDate(new Date());
   }
 
   return (
@@ -170,7 +170,7 @@ export const Calendar = () => {
       </div>
       <table className=" table-auto text-center">
         <caption className="py-1 bg-blue-600 text-white text-2xl">
-          {format(date, "MMMM yyyy")}
+          {format(currentDate, "MMMM yyyy")}
         </caption>
 
         <thead>
