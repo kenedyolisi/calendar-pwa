@@ -34,6 +34,6 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
-    "vite-plugin-pwa": "^0.17.4"
+    "vite-plugin-pwa": "^0.19.2"
   }
 }
