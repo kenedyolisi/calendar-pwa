@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":semanticCommits"],
+  "commitMessageLowerCase": "auto",
+  "commitMessagePrefix": "build(deps): ",
+  "commitMessageAction": "bump",
+  "commitMessageTopic": "{{depName}} from {{previousVersion}} to {{currentVersion}}",
+  "commitMessageSuffix": " (#{pullNumber})",
+  "packageRules": [
+    { "matchDepTypes": ["dependencies"], "addLabels": ["dependencies"] },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "commitMessagePrefix": "build(deps-dev): ",
+      "addLabels": ["devDependencies"]
+    }
+  ]
+}
