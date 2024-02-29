@@ -6,11 +6,13 @@
 version: 2
 
 updates:
-  - package-ecosystem: "pnpm"
+  - package-ecosystem: "npm"
     # Files stored in repository root
     directory: "/"
     schedule:
       interval: "weekly"
+      timezone: "Africa/Nairobi"
+    open-pull-requests-limit: 10
 
   - package-ecosystem: "github-actions"
     # Workflow files stored in the default location of `.github/workflows`
