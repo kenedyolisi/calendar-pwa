@@ -33,7 +33,7 @@
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
-    "vite": "^5.1.4",
+    "vite": "^5.1.6",
     "vite-plugin-pwa": "^0.19.2"
   }
 }
